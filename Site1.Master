@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="projectmockbite.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <%-- custom css --%>
+    <link href="CSS/MainStyleSheet.css" rel="stylesheet" />
+    <%-- bootstrap css --%>
+    <link href="Bootsrap/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="Bootsrap/CSS/customstylesheet.css" rel="stylesheet" />
+    <%-- bootsrap JS --%>
+    <script src="Bootsrap/JS/bootstrap.bundle.min.js"></script>
+    <script src="Bootsrap/JS/bootstrap.min.js"></script>
+    <script src="Bootsrap/JS/popper.min.js"></script>
+
+    <%-- datatables css --%>
+    <link href="datatables/CSS/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--datatables js--%>
+    <script src="datatables/JS/jquery.dataTables.min.js"></script>
+
+
+    <%--fontawesome css--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <%--fontawesome js--%>
+    <script src="fontawesome/js/all.js"></script>
+  
+<script type=”text/javascript” language=”javascript”>
+function mm()
+{
+    var my = confirm(“Are you sure you want to Logout?”);
+    if( my == true )
+    {
+    
+    return true;
+    }
+    else
+    {
+    
+    return false;
+}
+}
+</script>
+
+
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">    
+              
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+          <div>
+            <nav class="navbar navbar-expand-lg navbar-light theme">
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid" src="imgs/logo.png" width="100" height="80" />
+                    MockBite
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="homepage.aspx">Home</a>
+                        </li>
+                                     
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link " ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" >Tests</asp:LinkButton>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" >User Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" >Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" Visible="False" OnClientClick="return mm()" OnClick="LinkButton3_Click" >Logout</asp:LinkButton>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" Visible="False">Hello user</asp:LinkButton>
+
+                        </li>
+                    </ul>
+                </div>
+
+
+            </nav>
+  </div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">     
+        </asp:ContentPlaceHolder>
+    </div>
+
+        <div>
+
+            <footer class="theme">
+               <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 p-2">
+                         <h1>MockBite</h1>
+                          <p>An Exam Portal for Creating and Attempting Tests</p>
+                    </div>
+
+                <div class="col-md-4 p-1">
+                    <h4>Contact Links :</h4>
+                    <ul>
+                        <li><a class="textdeco" href="#">Facebook</a></li>
+                        <li><a class="textdeco" href="#">Instagram</a></li>
+                        <li><a class="textdeco" href="#">Twitter</a></li>
+                        <li><asp:LinkButton CssClass="textdeco"  ID="LinkButton11" runat="server" OnClick="LinkButton11_Click">Contact Us</asp:LinkButton></li>
+                    </ul>
+                    </div>
+
+                 <div class="col-md-4 p-1">
+                    
+                         <h4>Admin :</h4>
+                            <asp:LinkButton CssClass="textdeco" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton><br />
+                     <asp:LinkButton CssClass="textdeco" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click">Become An Admin</asp:LinkButton><br />
+                            <asp:LinkButton CssClass="textdeco" ID="LinkButton8" runat="server" Visible="false">Create a test</asp:LinkButton><br />
+                            <asp:LinkButton CssClass="textdeco" ID="LinkButton9" runat="server" Visible="false">Update a test</asp:LinkButton><br />
+                            <asp:LinkButton CssClass="textdeco" ID="LinkButton5" runat="server" Visible="false">Delete a test</asp:LinkButton><br />
+                    </div>
+                    </div>
+
+            </div>
+            </footer>
+
+        </div>
+    </form>
+</body>
+</html>
